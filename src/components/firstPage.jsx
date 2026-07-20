@@ -58,7 +58,10 @@ export function Form({setUsername,setUserAddress,setGithub,setImage,setGoToNext}
         const githubValue = formData.get("github");
         if(nameValue.trim()==""|| githubValue.trim()=="" || newPhoto==null){
             alert("Please complete all fields");
+<<<<<<< HEAD
             return;
+=======
+>>>>>>> 490ca9ce88a35ac5d9448faadd7c942c86004664
         }
         setUsername(nameValue);
         setUserAddress(mailValue);
@@ -131,6 +134,10 @@ const GetEmail = ()=>{
     const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
     const handleEmailChange = (event) => {
         const userValue = event.target.value;
+<<<<<<< HEAD
+=======
+        setEmail(userValue); 
+>>>>>>> 490ca9ce88a35ac5d9448faadd7c942c86004664
         setIsErrorText("");
         setError(false) 
 
@@ -149,7 +156,11 @@ const GetEmail = ()=>{
         <div className="flex flex-col "> 
             <label htmlFor="email" className=" font-medium text-xl ">Email Address </label>
             <div >
+<<<<<<< HEAD
                 <input type="text" id="email" name="email" className={`bg-white/10 ${error ? "border-red-600" : "border-white/50" } border-2 rounded-md p-1 w-full `} onChange={handleEmailChange} placeholder="example@email.com"/>
+=======
+                <input type="text" id="email" name="email" className={`bg-white/10 ${error ? "border-white/50" : "border-red-600" } border-2 rounded-md p-1 w-full `} onChange={handleEmailChange} placeholder="example@email.com"/>
+>>>>>>> 490ca9ce88a35ac5d9448faadd7c942c86004664
             </div>
             
             {error &&
@@ -179,3 +190,7 @@ const BtnSubmit = ()=>{
         </div>
     )
 } 
+<<<<<<< HEAD
+=======
+//Modifie le svg en elevant le currentColor
+>>>>>>> 490ca9ce88a35ac5d9448faadd7c942c86004664

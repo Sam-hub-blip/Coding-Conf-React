@@ -13,9 +13,15 @@ export function TextSecondPage({Username,UserAddress}) {
   return (
     <div>
       <div className='space-y-8 '>
+<<<<<<< HEAD
         <h1 className='text-center font-bold text-6xl  text-white '>
           Congrats,<span className='bg-clip-text text-transparent bg-linear-to-r from-[var(--Orange-500)] to-white'>{Username}!</span><br /> Your ticket is ready.
         </h1>
+=======
+        <p className='text-center font-bold text-5xl text-white '>
+          Congrats,<span className='bg-clip-text text-transparent bg-linear-to-r from-[var(--Orange-500)] to-white'>{Username}!</span><br /> Your ticket is ready.
+        </p>
+>>>>>>> 490ca9ce88a35ac5d9448faadd7c942c86004664
         <p className='text-center text-neutral-300 '>we've emailed your ticket to <br /><span className='bg-clip-text text-transparent bg-linear-to-r from-[var(--Orange-500)] to-white'>{UserAddress}</span> and will send updates <br />in the run up to the event.</p>
       </div>
     </div>
