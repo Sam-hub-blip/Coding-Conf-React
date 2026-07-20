@@ -13,7 +13,6 @@ function Application() {
   const [Username,setUsername] = useState('');
   const [UserAddress,setUserAddress] = useState('');
   const [Github,setGithub] = useState("");
->>>>>>> 490ca9ce88a35ac5d9448faadd7c942c86004664
   return (
     <div>
       <Title />
