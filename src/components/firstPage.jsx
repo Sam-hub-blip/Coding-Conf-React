@@ -143,7 +143,7 @@ const GetEmail = ({setOK})=>{
         }
         else{
             setError(false);
-            setOK(true):
+            setOK(true);
             
             
         }
