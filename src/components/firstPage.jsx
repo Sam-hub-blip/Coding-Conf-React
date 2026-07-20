@@ -182,7 +182,3 @@ const BtnSubmit = ()=>{
         </div>
     )
 } 
-<<<<<<< HEAD
-=======
-//Modifie le svg en elevant le currentColor
->>>>>>> 490ca9ce88a35ac5d9448faadd7c942c86004664
