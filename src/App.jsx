@@ -2,13 +2,12 @@ import  { useState } from 'react'
 import { Title,Text,Form } from './components/firstPage'
 import { TextSecondPage,Ticket } from './components/secondPage';
 function Application() {
-<<<<<<< HEAD
-  const [goToNext,setGoToNext] = useState(true)
+
+  const [goToNext,setGoToNext] = useState(false);
   const [image,setImage] = useState(null);
-  const [Username,setUsername] = useState('satevdvdbvbvbbchgfbf');
-  const [UserAddress,setUserAddress] = useState('hhggrvgddbbhbgffgfggh');
-  const [Github,setGithub] = useState("kkhjjgngvdvdbvfbbbnn,,,");
-=======
+  const [Username,setUsername] = useState('');
+  const [UserAddress,setUserAddress] = useState('');
+  const [Github,setGithub] = useState("");
   const [goToNext,setGoToNext] = useState(false)
   const [image,setImage] = useState(null);
   const [Username,setUsername] = useState('');
