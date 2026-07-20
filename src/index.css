@@ -1,0 +1,83 @@
+@import "tailwindcss"; 
+
+:root {
+  --Orange-500: hsl(7, 88%, 67%);
+  --Orange-700: hsl(7, 71%, 60%);
+
+  --Gradient: linear-gradient(hsl(7, 86%, 67%),hsl(0, 0%, 100%));
+  --background: url('/images/background-desktop.png');
+  --lines: url('/images/pattern-lines.svg');
+  --circle: url('/images/pattern-circle.svg');
+  --squiggly-bottom: url('/images/pattern-squiggly-line-bottom-desktop.svg');
+  --squiggly-top: url('/images/pattern-squiggly-line-top.svg');
+  --ticket: url('/images/pattern-ticket.svg');
+}
+@font-face {
+  font-family: 'Inconsolata Variable';
+  /* On pointe vers le fichier unique */
+  src: url('/fonts/Inconsolata-VariableFont_wdth\,wght.ttf') format('truetype-variations'), /* Format spécifique pour les navigateurs récents */
+       url('/fonts/Inconsolata-VariableFont_wdth\,wght.ttf') format('truetype'); /* Secours */
+  
+  /* On indique que cette police peut aller du très fin (200) au très gras (900) */
+  font-weight: 200 900; 
+  font-style: normal;
+}
+@theme{
+    --font-inconsolata : 'Inconsolata Variable',monospace;
+ 
+}
+body{
+  min-height: 100vh;
+    width: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    font-family: Inconsolata Variable,monospace;
+    font-weight: 350;
+    background-image: 
+        var(--squiggly-top),
+        var(--squiggly-bottom),
+        var(--circle),
+        var(--circle),
+        var(--lines),
+        var(--background); 
+        
+    background-repeat: 
+        no-repeat,
+        no-repeat,
+        no-repeat,
+        no-repeat,
+        repeat,
+        no-repeat;
+
+    background-position: 
+        top 10% right 0px,    
+        bottom 0px left 0px, 
+        bottom 0px right 10px, 
+        top -100px left 0px,
+        center center,        
+        center center;         
+        
+    background-size: 
+        35%,               
+        45%,               
+        auto, 
+        auto,             
+        auto,                  
+        cover;               
+        
+    background-attachment: fixed;
+    background-blend-mode: color-dodge, normal, screen, screen, overlay, normal;
+}
+.ticket-part{
+  /* Le chemin vers ton image */
+  background-image: url('/images/pattern-ticket.svg');
+  
+  /* Les propriétés pour que le motif s'affiche correctement */
+  background-size: 150% 150% ;
+  background-position: center;
+  background-repeat: no-repeat;
+}
