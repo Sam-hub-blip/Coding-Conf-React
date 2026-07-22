@@ -8,7 +8,7 @@ export function Title(){
     return(
         <header className="mb-8">
             <div className="flex justify-center items-center">
-                <img src={logoFull}  alt="the logo" className=""/>
+                <img src={logoFull}  alt="the logo" className="w-48 sm:w-56"/>
                 
             </div>
         </header>
@@ -18,13 +18,13 @@ export function Title(){
 export function Text(){
     return(
         <div className="space-y-3">
-            <p className="font-bold text-4xl text-white text-center ">Your Journey to Coding Conf <br /> 2025 Starts Here!</p>
-            <p className="text-neutral-300">Secure your spot at next year's biggest coding conference.</p>
+            <p className="font-bold text-2xl sm:text-3xl md:text-4xl text-white text-center ">Your Journey to Coding Conf <br /> 2025 Starts Here!</p>
+            <p className="text-neutral-300 text-sm sm:text-base">Secure your spot at next year's biggest coding conference.</p>
         </div>
     )
 }
 export function Form({setUsername,setUserAddress,setGithub,setImage,setGoToNext}){
-    const [Ok,setOK] = useState(false);
+    const [isEmailValid,setIsEmailValid] = useState(false);
     const [IsErrorText,setIsErrorText] = useState("");
     const [isError,setIsError]= useState(false);
     const [IsUploaded,setIsUploaded]= useState(false);
@@ -37,7 +37,6 @@ export function Form({setUsername,setUserAddress,setGithub,setImage,setGoToNext}
                 const imageURL = URL.createObjectURL(file);
                 setNewPhoto(imageURL);
                 setIsUploaded(true);
-                console.log("Url crée");
                 setIsError(false);
             }
             else{
@@ -56,7 +55,7 @@ export function Form({setUsername,setUserAddress,setGithub,setImage,setGoToNext}
         const nameValue = formData.get("name");
         const mailValue = formData.get("email"); 
         const githubValue = formData.get("github");
-        if(nameValue.trim()==""|| githubValue.trim()=="" || newPhoto==null || !ok) {
+        if(nameValue.trim()==""|| githubValue.trim()=="" || newPhoto==null || !isEmailValid) {
             alert("Please complete all fields");
             return;
         }
@@ -65,11 +64,10 @@ export function Form({setUsername,setUserAddress,setGithub,setImage,setGoToNext}
         setGithub(githubValue);
         setImage(newPhoto);
         setGoToNext(true);
-        console.log(nameValue,mailValue,githubValue);
     }
 
     return(
-        <form onSubmit={handleSubmit} action="#" className="text-white justify-center items-center p-10 space-y-5">
+        <form onSubmit={handleSubmit} action="#" className="text-white justify-center items-center px-4 py-6 sm:p-10 space-y-5">
             <div>
                 <span className="font-medium">Upload Avatar</span>
                 <div className="">
@@ -108,8 +106,8 @@ export function Form({setUsername,setUserAddress,setGithub,setImage,setGoToNext}
                 </div>
             </div>
             <GetName />
-            <GetEmail/>
-            <GetGithub setOK={setOK} />
+            <GetEmail setIsEmailValid={setIsEmailValid}/>
+            <GetGithub />
             <BtnSubmit />
         </form>
     )
@@ -118,39 +116,36 @@ const GetName = ()=>{
 
     return(
         <div className="flex flex-col">
-            <label htmlFor="name" className="font-medium text-xl ">Full Name</label>
+            <label htmlFor="name" className="font-medium text-lg sm:text-xl ">Full Name</label>
             <div>
                 <input type="text" id="name" name="name" className={inputDesign} />
             </div>
         </div>
     )
 }
-const GetEmail = ({setOK})=>{
+const GetEmail = ({setIsEmailValid})=>{
     const [IsErrorText,setIsErrorText] = useState("");
     const [error,setError] = useState(false);
     const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
     const handleEmailChange = (event) => {
         const userValue = event.target.value;
 
-        setEmail(userValue); 
         setIsErrorText("");
-        setError(false) 
+        setError(false); 
 
-        
         if (userValue.length > 0 && !emailRegex.test(userValue)) {
             setError(true);
             setIsErrorText("Please enter a valid email address");
+            setIsEmailValid(false);
         }
         else{
             setError(false);
-            setOK(true);
-            
-            
+            setIsEmailValid(true);
         }
     };
     return(
         <div className="flex flex-col "> 
-            <label htmlFor="email" className=" font-medium text-xl ">Email Address </label>
+            <label htmlFor="email" className=" font-medium text-lg sm:text-xl ">Email Address </label>
             <div >
                 <input type="text" id="email" name="email" className={`bg-white/10 ${error ? "border-red-600" : "border-white/50 " } border-2 rounded-md p-1 w-full `} onChange={handleEmailChange} placeholder="example@email.com"/>
             </div>
@@ -167,7 +162,7 @@ const GetGithub = ()=>{
 
     return(
         <div className="flex flex-col">
-            <label htmlFor="github" className="font-medium text-xl ">Github Username</label>
+            <label htmlFor="github" className="font-medium text-lg sm:text-xl ">Github Username</label>
             <div className="hover:border-white/50">
                 <input type="text" id="github" name="github" className={inputDesign}  placeholder="@yourusername"/>
             </div>

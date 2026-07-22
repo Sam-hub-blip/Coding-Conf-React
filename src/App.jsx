@@ -9,15 +9,15 @@ function Application() {
   const [UserAddress,setUserAddress] = useState('');
   const [Github,setGithub] = useState("");
   return (
-    <div>
+    <div className="w-full max-w-3xl mx-auto px-4">
       <Title />
       <div hidden={goToNext}>
         <Text/>
         <Form setUsername={setUsername} setUserAddress={setUserAddress} setGithub={setGithub} setImage={setImage} setGoToNext={setGoToNext} />
       </div>
-      <div hidden={!goToNext}  >
-    <TextSecondPage Username={Username} UserAddress={UserAddress} />
-    <Ticket Username={Username} UserAddress={UserAddress} Github={Github} image={image}/>
+      <div hidden={!goToNext}>
+        <TextSecondPage Username={Username} UserAddress={UserAddress} />
+        <Ticket Username={Username} UserAddress={UserAddress} Github={Github} image={image}/>
       </div>
     </div>
   )
