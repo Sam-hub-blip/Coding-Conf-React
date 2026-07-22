@@ -56,7 +56,7 @@ export function Form({setUsername,setUserAddress,setGithub,setImage,setGoToNext}
         const nameValue = formData.get("name");
         const mailValue = formData.get("email"); 
         const githubValue = formData.get("github");
-        if(nameValue.trim()==""|| githubValue.trim()=="" || newPhoto==null || Ok==false){
+        if(nameValue.trim()==""|| githubValue.trim()=="" || newPhoto==null {
             alert("Please complete all fields");
             return;
         }
